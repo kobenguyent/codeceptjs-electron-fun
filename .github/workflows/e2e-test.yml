@@ -39,7 +39,7 @@ jobs:
         working-directory: ./test
         run: |
           npm i
-          npm run e2e:test && npm run allure-reports-generate && npm run allure-reports-patch
+          xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- npm run e2e:test && npm run allure-reports-generate && npm run allure-reports-patch
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
