@@ -1,0 +1,26 @@
+{
+  "name": "codeceptjs-electron-fun",
+  "version": "1.0.0",
+  "description": "Codeceptjs tests with electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/kobenguyent/codeceptjs-electron-fun",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "codeceptjs"
+  ],
+  "author": "kobenguyent",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^25.1.0"
+  },
+  "dependencies": {
+    "codeceptjs": "^3.4.1"
+  }
+}
