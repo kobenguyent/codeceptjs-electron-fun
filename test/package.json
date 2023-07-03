@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
-    "codeceptjs": "^3.4.1"
+    "codeceptjs": "^3.4.1",
+    "allure-commandline": "^2.22.1",
+    "allure-patch": "^1.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
