@@ -21,6 +21,6 @@
     "electron": "^26.2.1"
   },
   "dependencies": {
-    "codeceptjs": "^3.5.4"
+    "codeceptjs": "^3.5.5"
   }
 }
