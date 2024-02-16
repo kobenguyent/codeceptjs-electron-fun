@@ -15,6 +15,7 @@ export const config: CodeceptJS.MainConfig = {
     Playwright: {
       url: 'http://localhost',
       show: false,
+      waitForTimeout: 10000,
       browser: 'electron',
       electron: {
         executablePath: require("electron"),
