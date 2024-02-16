@@ -10,10 +10,12 @@ setCommonPlugins();
 export const config: CodeceptJS.MainConfig = {
   tests: './*_test.ts',
   output: './output',
+  timeout: 20,
   helpers: {
     Playwright: {
       url: 'http://localhost',
       show: false,
+      waitForTimeout: 10000,
       browser: 'electron',
       electron: {
         executablePath: require("electron"),
