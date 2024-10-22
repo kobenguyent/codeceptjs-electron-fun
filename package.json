@@ -18,7 +18,7 @@
   "author": "kobenguyent",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^32.1.2"
+    "electron": "^33.0.2"
   },
   "dependencies": {
     "codeceptjs": "^3.6.7"
