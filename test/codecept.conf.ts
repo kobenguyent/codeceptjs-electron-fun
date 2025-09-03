@@ -10,16 +10,19 @@ setCommonPlugins();
 export const config: CodeceptJS.MainConfig = {
   tests: './*_test.ts',
   output: './output',
-  timeout: 20,
+  timeout: 60,
   helpers: {
     Playwright: {
       url: 'http://localhost',
       show: false,
-      waitForTimeout: 10000,
+      waitForTimeout: 30000,
       browser: 'electron',
       electron: {
         executablePath: require("electron"),
-        args: [path.join('../', "main.js")],
+        args: [
+          path.join('../', "main.js"),
+          ...(process.env.CI ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'] : [])
+        ],
       },
     }
   },
