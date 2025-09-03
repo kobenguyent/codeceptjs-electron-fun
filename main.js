@@ -12,8 +12,12 @@ function createWindow () {
     }
   })
 
-  // and load the webview of the app.
-  mainWindow.loadURL('https://todomvc.com/examples/react/#/')
+  // and load the local todo app instead of external URL for better CI compatibility
+  if (process.env.CI) {
+    mainWindow.loadFile('todo.html')
+  } else {
+    mainWindow.loadURL('https://todomvc.com/examples/react/#/')
+  }
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

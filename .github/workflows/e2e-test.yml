@@ -32,11 +32,18 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libnss3 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libxss1 libgconf-2-4 libxrandr2 libasound2 libpangocairo-1.0-0 libatk1.0-0 libcairo-gobject2 libgtk-3-0 libgdk-pixbuf2.0-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6
       - name: install deps
         run: |
           npm i
       - name: Run tests
         working-directory: ./test
+        env:
+          HEADLESS: true
+          CI: true
         run: |
           npm i
           xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- npm run e2e:test && npm run allure-reports-generate && npm run allure-reports-patch
